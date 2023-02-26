@@ -13,7 +13,7 @@ Exemplos:
 """
 
 if __name__ == "__main__":
-    
+
     i = 0
 
     while i < 10:
@@ -43,4 +43,3 @@ if __name__ == "__main__":
 
         print(i)
         i += 1
-        
