@@ -70,4 +70,4 @@ lista = [4, 7, 8, 1, 9]
 lista_invertida = [9, 1, 8, 7, 4]
 ```
 
-9. Escreva um programa em Python que gere uma lista randômica de 50 números de 1 até 50. Em seguida, retire os valores repetidos dessa lista
+9. Escreva um programa em Python que gere uma lista randômica de 50 números de 1 até 50. Em seguida, retire os valores repetidos dessa lista (utilize a função `randint()` do pacote `random`)
