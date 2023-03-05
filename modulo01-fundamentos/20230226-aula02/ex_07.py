@@ -49,8 +49,11 @@ if __name__ == "__main__":
 
         lista_clientes.append(info)
 
-    print(lista_clientes)
+    for cliente in lista_clientes:
+        print(f"Nome: {cliente['nome']}")
+        print(f"Idade: {cliente['idade']}")
+        print(f"Sexo: {cliente.get('sexo')}\n")
+
     print(f"Quantidade de usuários do sexo masculino: {qtd_sexo_masculino}.")
     print(f"Quantidade de usuários do sexo feminino: {qtd_sexo_feminino}.")
     print(f"Média de idade: {soma_idades / len(lista_clientes):.2f}")
-    
