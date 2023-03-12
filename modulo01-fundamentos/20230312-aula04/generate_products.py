@@ -31,7 +31,7 @@ if __name__ == "__main__":
             data = {
                 "sale_id": choice(sales_codes),
                 "product": fake.ecommerce_name(),
-                "quantity": fake.pyint(min_value=0, max_value=10),
+                "quantity": fake.pyint(min_value=1, max_value=10),
                 "price": fake.pyfloat(right_digits=2, positive=True, min_value=1, max_value=1000)
             }
 
