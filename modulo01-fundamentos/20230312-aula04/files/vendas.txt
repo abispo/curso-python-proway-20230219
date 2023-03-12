@@ -1,0 +1,399 @@
+Código: 0001
+Vendedor: Paulo Oliveira
+Vendas: 19314.47
+
+Código: 0002
+Vendedor: Ana Clara da Mata
+Vendas: 5947.37
+
+Código: 0003
+Vendedor: Agatha Martins
+Vendas: 5598.51
+
+Código: 0004
+Vendedor: Enzo Ferreira
+Vendas: 10496.37
+
+Código: 0005
+Vendedor: Kaique Oliveira
+Vendas: 12241.54
+
+Código: 0006
+Vendedor: Caio Pinto
+Vendas: 17944.45
+
+Código: 0007
+Vendedor: Marcelo Castro
+Vendas: 14658.1
+
+Código: 0008
+Vendedor: Lívia Monteiro
+Vendas: 15703.27
+
+Código: 0009
+Vendedor: Calebe Vieira
+Vendas: 12139.96
+
+Código: 0010
+Vendedor: João Lucas da Mota
+Vendas: 3808.4
+
+Código: 0011
+Vendedor: Gabriela Oliveira
+Vendas: 9499.27
+
+Código: 0012
+Vendedor: Vitor Cavalcanti
+Vendas: 16570.11
+
+Código: 0013
+Vendedor: Lorena Gonçalves
+Vendas: 5404.2
+
+Código: 0014
+Vendedor: Lorenzo Silva
+Vendas: 19392.65
+
+Código: 0015
+Vendedor: Pietro da Luz
+Vendas: 15184.69
+
+Código: 0016
+Vendedor: Sophia Teixeira
+Vendas: 18565.62
+
+Código: 0017
+Vendedor: Melissa Vieira
+Vendas: 4421.89
+
+Código: 0018
+Vendedor: Luiz Miguel Barbosa
+Vendas: 18762.47
+
+Código: 0019
+Vendedor: Lorenzo Duarte
+Vendas: 17426.98
+
+Código: 0020
+Vendedor: Carlos Eduardo Moura
+Vendas: 6540.32
+
+Código: 0021
+Vendedor: Maria Fernanda da Cunha
+Vendas: 19731.81
+
+Código: 0022
+Vendedor: Diego Teixeira
+Vendas: 19860.49
+
+Código: 0023
+Vendedor: Ana Julia Pires
+Vendas: 10784.3
+
+Código: 0024
+Vendedor: Thomas Alves
+Vendas: 7717.85
+
+Código: 0025
+Vendedor: Marcelo Cavalcanti
+Vendas: 18890.21
+
+Código: 0026
+Vendedor: Pedro Miguel da Luz
+Vendas: 13491.67
+
+Código: 0027
+Vendedor: Evelyn Lopes
+Vendas: 7838.13
+
+Código: 0028
+Vendedor: Davi Lucas Cardoso
+Vendas: 7721.37
+
+Código: 0029
+Vendedor: Isabelly Monteiro
+Vendas: 18386.68
+
+Código: 0030
+Vendedor: Laura Costa
+Vendas: 15315.28
+
+Código: 0031
+Vendedor: Luna Santos
+Vendas: 17906.71
+
+Código: 0032
+Vendedor: Fernanda Peixoto
+Vendas: 12378.29
+
+Código: 0033
+Vendedor: Isis Rocha
+Vendas: 19469.45
+
+Código: 0034
+Vendedor: Rebeca Almeida
+Vendas: 12202.52
+
+Código: 0035
+Vendedor: Lucas Gabriel Aragão
+Vendas: 12171.68
+
+Código: 0036
+Vendedor: Lorena da Conceição
+Vendas: 17539.69
+
+Código: 0037
+Vendedor: Isis Viana
+Vendas: 17248.67
+
+Código: 0038
+Vendedor: Vitor Gabriel Jesus
+Vendas: 8540.69
+
+Código: 0039
+Vendedor: Davi Lucas Fernandes
+Vendas: 3002.54
+
+Código: 0040
+Vendedor: Isadora Pires
+Vendas: 3249.82
+
+Código: 0041
+Vendedor: Maria Sophia Cardoso
+Vendas: 10477.49
+
+Código: 0042
+Vendedor: Isabel Almeida
+Vendas: 14828.35
+
+Código: 0043
+Vendedor: Yago Cardoso
+Vendas: 9480.65
+
+Código: 0044
+Vendedor: Bruna Nascimento
+Vendas: 5549.57
+
+Código: 0045
+Vendedor: Catarina Moraes
+Vendas: 18364.61
+
+Código: 0046
+Vendedor: Isis Porto
+Vendas: 11121.92
+
+Código: 0047
+Vendedor: Henrique Aragão
+Vendas: 7656.97
+
+Código: 0048
+Vendedor: Natália Aragão
+Vendas: 14942.35
+
+Código: 0049
+Vendedor: Emanuelly Martins
+Vendas: 13960.14
+
+Código: 0050
+Vendedor: Pedro Pinto
+Vendas: 14826.87
+
+Código: 0051
+Vendedor: Rafaela Rodrigues
+Vendas: 8723.13
+
+Código: 0052
+Vendedor: Isabella Fogaça
+Vendas: 16925.6
+
+Código: 0053
+Vendedor: Bryan Oliveira
+Vendas: 16410.35
+
+Código: 0054
+Vendedor: Maysa Alves
+Vendas: 7200.52
+
+Código: 0055
+Vendedor: Isadora da Paz
+Vendas: 7219.54
+
+Código: 0056
+Vendedor: Maysa Correia
+Vendas: 13627.98
+
+Código: 0057
+Vendedor: Pedro Cunha
+Vendas: 5570.27
+
+Código: 0058
+Vendedor: Ana Clara Farias
+Vendas: 19181.43
+
+Código: 0059
+Vendedor: Kamilly das Neves
+Vendas: 10573.74
+
+Código: 0060
+Vendedor: Marcelo Nascimento
+Vendas: 13787.93
+
+Código: 0061
+Vendedor: Marina Ferreira
+Vendas: 8608.3
+
+Código: 0062
+Vendedor: Ana Santos
+Vendas: 4192.61
+
+Código: 0063
+Vendedor: Davi Luiz Rezende
+Vendas: 19369.99
+
+Código: 0064
+Vendedor: Carolina Peixoto
+Vendas: 11225.32
+
+Código: 0065
+Vendedor: Pedro Lucas Pinto
+Vendas: 6183.68
+
+Código: 0066
+Vendedor: Luiz Gustavo da Paz
+Vendas: 18834.82
+
+Código: 0067
+Vendedor: João Gabriel Viana
+Vendas: 15071.55
+
+Código: 0068
+Vendedor: Luiz Gustavo Campos
+Vendas: 8052.29
+
+Código: 0069
+Vendedor: Otávio Cavalcanti
+Vendas: 11131.83
+
+Código: 0070
+Vendedor: Larissa Porto
+Vendas: 19863.8
+
+Código: 0071
+Vendedor: Melissa Moreira
+Vendas: 6923.4
+
+Código: 0072
+Vendedor: Renan Campos
+Vendas: 14680.25
+
+Código: 0073
+Vendedor: Anthony da Mata
+Vendas: 16496.36
+
+Código: 0074
+Vendedor: Ana Sophia da Cruz
+Vendas: 17584.52
+
+Código: 0075
+Vendedor: Eduardo Nogueira
+Vendas: 5146.32
+
+Código: 0076
+Vendedor: Ian Campos
+Vendas: 13416.39
+
+Código: 0077
+Vendedor: Nicolas Correia
+Vendas: 11476.19
+
+Código: 0078
+Vendedor: Gustavo Rezende
+Vendas: 6077.2
+
+Código: 0079
+Vendedor: Noah Pires
+Vendas: 7876.91
+
+Código: 0080
+Vendedor: Lorenzo Cardoso
+Vendas: 19892.51
+
+Código: 0081
+Vendedor: Rebeca Dias
+Vendas: 3083.81
+
+Código: 0082
+Vendedor: Isabel Oliveira
+Vendas: 8534.82
+
+Código: 0083
+Vendedor: João Miguel Cavalcanti
+Vendas: 15713.42
+
+Código: 0084
+Vendedor: Alice Ferreira
+Vendas: 5378.21
+
+Código: 0085
+Vendedor: Ana Lívia Rocha
+Vendas: 12535.57
+
+Código: 0086
+Vendedor: Ian da Costa
+Vendas: 19850.4
+
+Código: 0087
+Vendedor: Lorena Ferreira
+Vendas: 11995.96
+
+Código: 0088
+Vendedor: Melissa Lima
+Vendas: 19819.85
+
+Código: 0089
+Vendedor: Heloísa Dias
+Vendas: 9274.24
+
+Código: 0090
+Vendedor: Maitê Alves
+Vendas: 16982.86
+
+Código: 0091
+Vendedor: Heloísa Jesus
+Vendas: 15606.56
+
+Código: 0092
+Vendedor: Vitor Santos
+Vendas: 4676.74
+
+Código: 0093
+Vendedor: Maria Vitória Cardoso
+Vendas: 12009.65
+
+Código: 0094
+Vendedor: Marina Rezende
+Vendas: 4980.2
+
+Código: 0095
+Vendedor: Vitor Hugo Cavalcanti
+Vendas: 8342.64
+
+Código: 0096
+Vendedor: Antônio Moura
+Vendas: 19606.99
+
+Código: 0097
+Vendedor: Eduarda Campos
+Vendas: 8381.43
+
+Código: 0098
+Vendedor: Luana Araújo
+Vendas: 13349.12
+
+Código: 0099
+Vendedor: Luiz Felipe da Mata
+Vendas: 13370.84
+
+Código: 0100
+Vendedor: Pedro Henrique Costa
+Vendas: 13871.21
