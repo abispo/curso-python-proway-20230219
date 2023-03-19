@@ -22,7 +22,7 @@ if __name__ == "__main__":
 
     with open(os.path.join(os.getcwd(), "notas.csv"), "r") as arquivo:
 
-        arquivo_csv = csv.DictReader(arquivo, delimiter=';')
+        arquivo_csv = csv.DictWriter(arquivo, delimiter=';')
 
         for linha in arquivo_csv:
             print(linha)
