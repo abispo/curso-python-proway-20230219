@@ -82,3 +82,49 @@ INSERT INTO tb_postagens (usuario_id, titulo, corpo) VALUES
 -- O comando abaixo não irá funcionar, pois não existe um id 10 na tabela de usuário
 INSERT INTO tb_postagens (usuario_id, titulo, corpo) VALUES
 	(10, "A linguagem Coldfusion", "Coldfusion é bem parecido com html");
+	
+/*
+ * Criação da tabela tb_categorias
+ */
+
+CREATE TABLE IF NOT EXISTS tb_categorias(
+	id INTEGER PRIMARY KEY AUTOINCREMENT,
+	nome TEXT NOT NULL
+);
+
+/*
+ * Em uma relação N:N, precisamos criar uma outra tabela, definida como tabela
+ * associativa. Basicamente ela fará a associação entre as tabelas que
+ * tem a relação N:N
+ * 
+ * postagem_id e categoria_id são chaves primárias, ou seja, temos uma chave
+ * primária composta na tabela
+ * Ao mesmo tempo, cada coluna é uma chave estrangeira das tabelas
+ * tb_postagem e tb_categorias, respectivamente.
+ */
+
+CREATE TABLE IF NOT EXISTS tb_postagens_categorias(
+	postagem_id INTEGER NOT NULL,
+	categoria_id INTEGER NOT NULL,
+	PRIMARY KEY(postagem_id, categoria_id),
+	FOREIGN KEY(postagem_id) REFERENCES tb_postagens(id),
+	FOREIGN KEY(categoria_id) REFERENCES tb_categorias(id)
+);
+
+INSERT INTO tb_categorias (nome) VALUES ("TI");
+INSERT INTO tb_categorias (nome) VALUES ("Proway");
+INSERT INTO tb_categorias (nome) VALUES ("Python");
+
+SELECT * FROM tb_categorias tc ;
+
+INSERT INTO tb_postagens_categorias (postagem_id, categoria_id) VALUES (
+	1, 1
+);
+
+INSERT INTO tb_postagens_categorias (postagem_id, categoria_id) VALUES (
+	1, 2
+);
+
+INSERT INTO tb_postagens_categorias (postagem_id, categoria_id) VALUES (
+	1, 3
+);
