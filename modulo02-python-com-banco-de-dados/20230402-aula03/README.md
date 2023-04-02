@@ -4,6 +4,10 @@
 
 ### Aplique a primeira forma normal nas seguintes tabelas:
 
+```
+PS: As colunas que contém asterisco (*) são as chaves primárias das tabelas
+```
+
 #### tb_pedidos
 
 | *pedido_id | nome_cliente  | produto                  | quantidade |
