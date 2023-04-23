@@ -44,7 +44,12 @@ class UsuarioPerfil(Base):
     nome = Column(String(200), nullable=False)
     sexo = Column(String(1), nullable=False)
 
+    # Como a relação é de 1:1, uselist será False pois apenas 1 registro será retornado
     usuario = relationship("Usuario", back_populates="perfil", uselist=False)
+
+    # Como UsuarioPerfil tem uma relação de 1:N com Postagens, uselist será True, pois o valor retornado
+    # pode ser uma lista vazia, ou uma lista com 1 ou mais registros
+    postagens = relationship("Postagem", back_populates="usuario", uselist=True)
 
 
 class Postagem(Base):
@@ -56,6 +61,13 @@ class Postagem(Base):
     titulo = Column(String(200), nullable=False)
     corpo = Column(Text, nullable=False)
 
+    usuario = relationship("UsuarioPerfil", back_populates="postagens", uselist=False)
+
+    # Quando temos uma relação N:N, obrigatoriamente precisamos criar uma tabela associativa. Para relacionar os objetos que
+    # representam essas tabelas, precisamos passar o argumento 'secondary' para a função relationship. Dessa maneira conseguimos
+    # relacionar os objetos
+    categorias = relationship("Categoria", secondary=postagens_categorias, back_populates="postagens", uselist=True)
+
 
 class Categoria(Base):
 
@@ -63,6 +75,8 @@ class Categoria(Base):
 
     id = Column(Integer, primary_key=True, autoincrement=True)
     nome = Column(String(100), nullable=False)
+
+    postagens = relationship("Postagem", secondary=postagens_categorias, back_populates="categorias", uselist=True)
 
 
 class Comentario(Base):
