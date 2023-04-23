@@ -5,6 +5,8 @@ from database import Base
 # Tipos das colunas que serão criadas na tabela mapeada
 from sqlalchemy import Column, Integer, String, DateTime, ForeignKey, Text, func, Table
 
+from sqlalchemy.orm import relationship
+
 postagens_categorias = Table(
     "tb_postagens_categorias", Base.metadata,
     Column("postagem_id", Integer, ForeignKey("tb_postagens.id"), primary_key=True),
@@ -21,6 +23,18 @@ class Usuario(Base):
     email = Column(String(100), nullable=False)
     senha = Column(String(100), nullable=False)
 
+    # Atributos do tipo relationship fazem a ligação entre os objetos que representam as tabelas que
+    # possuem relacionamento. Esse campo não existirá fisicamente no banco de dados
+
+    # Primeiro argumento: Nome da classe relacionada
+    # back_populates: Representa o campo de ligação no objeto relacionado
+    # uselist: Indicamos se queremos trazer uma lista de objetos relacionados ou não
+    perfil = relationship("UsuarioPerfil", back_populates="usuario", uselist=False)
+
+    
+    def __repr__(self):
+        return f"<Usuario({self.email})>"
+
 
 class UsuarioPerfil(Base):
 
@@ -29,6 +43,8 @@ class UsuarioPerfil(Base):
     id = Column(Integer, ForeignKey("tb_usuarios.id"), primary_key=True)
     nome = Column(String(200), nullable=False)
     sexo = Column(String(1), nullable=False)
+
+    usuario = relationship("Usuario", back_populates="perfil", uselist=False)
 
 
 class Postagem(Base):

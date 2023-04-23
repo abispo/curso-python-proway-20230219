@@ -29,10 +29,23 @@ def criar_perfil_usuario(usuario, nome, sexo):
 def listar_usuarios():
 
     # Consultar todos os registros (SELECT * FROM)
-    resultado = session.query(Usuario).all()
+    lista_usuarios = session.query(Usuario).all()
 
-    if len(resultado) == 0:
+    if len(lista_usuarios) == 0:
         print("Não há usuários cadastrados no sistema")
+
+    else:
+        print("Usuários cadastrados")
+        print("--------------------\n")
+
+        for usuario in lista_usuarios:
+            # SELECT * FROM tb_usuarios_perfis WHERE id = :id
+            # perfil = session.query(UsuarioPerfil).filter_by(id=usuario.id).first()
+
+            print(f"Nome: {usuario.perfil.nome}")
+            print(f"Sexo: {usuario.perfil.sexo}")
+            print(f"E-mail: {usuario.email}")
+            print("--------------------\n")
 
 
 if __name__ == "__main__":
@@ -59,3 +72,7 @@ if __name__ == "__main__":
             sexo = input("Informe o sexo do usuário: ")
 
             criar_usuario(email, senha, nome, sexo)
+
+
+        elif opcao == 5:
+            break

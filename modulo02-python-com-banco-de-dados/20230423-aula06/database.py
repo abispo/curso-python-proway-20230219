@@ -29,7 +29,7 @@ connection_string = f"mysql+pymysql://{db_user}:{db_pass}@{db_host}:{db_port}/{d
 
 # Aqui criamos a conexão com banco de dados. O primeiro argumento é a connection string criada
 # e o segundo argumento indica que os comandos SQL gerados serão mostramos no terminal
-engine = create_engine(connection_string, echo=True)
+engine = create_engine(connection_string)
 
 # Classe base de onde todas as models serão
 Base = declarative_base()
