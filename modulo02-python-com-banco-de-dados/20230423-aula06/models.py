@@ -61,6 +61,7 @@ class Postagem(Base):
     usuario_id = Column(Integer, ForeignKey("tb_usuarios_perfis.id"), nullable=False)
     titulo = Column(String(200), nullable=False)
     corpo = Column(Text, nullable=False)
+    data_hora = Column(DateTime, default=func.now)
 
     usuario = relationship("UsuarioPerfil", back_populates="postagens", uselist=False)
 
@@ -93,3 +94,11 @@ class Comentario(Base):
 
     usuario = relationship("UsuarioPerfil", back_populates="comentarios", uselist=False)
     postagem = relationship("Postagem", back_populates="comentarios", uselist=False)
+
+
+class Log(Base):
+
+    __tablename__ = "tb_logs"
+
+    id = Column(Integer, primary_key=True, autoincrement=True)
+    log = Column(Text, nullable=False)
