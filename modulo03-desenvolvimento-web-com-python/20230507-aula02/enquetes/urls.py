@@ -4,6 +4,9 @@ from django.urls import path
 # diretório que o módulo urls
 from . import views
 
+# namespace
+app_name = "enquetes"
+
 urlpatterns = [
     path("numero-da-sorte/", views.numero_da_sorte, name="numero_da_sorte"),
     path("", views.index, name="index"),
