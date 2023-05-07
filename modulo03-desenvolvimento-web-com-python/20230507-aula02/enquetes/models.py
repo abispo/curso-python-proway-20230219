@@ -11,6 +11,9 @@ class Pergunta(models.Model):
     class Meta:
         db_table = "tb_perguntas"
 
+    def __str__(self):
+        return self.texto
+
 
 class Opcao(models.Model):
 
@@ -20,3 +23,6 @@ class Opcao(models.Model):
 
     class Meta:
         db_table = "tb_opcoes"
+
+    def __str__(self) -> str:
+        return self.texto
