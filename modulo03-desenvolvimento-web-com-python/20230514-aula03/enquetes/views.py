@@ -1,9 +1,10 @@
 from random import randint
 
-from django.http import HttpResponse
+from django.http import HttpResponse, HttpResponseRedirect
 from django.shortcuts import render, get_object_or_404
+from django.urls import reverse
 
-from enquetes.models import Pergunta
+from enquetes.models import Pergunta, Opcao
 
 # enquetes/numero-da-sorte
 def numero_da_sorte(request):
@@ -31,8 +32,30 @@ def detalhes(request, pergunta_id):
 
 
 def resultados(request, pergunta_id):
-    return HttpResponse(f"Você está olhando os resultados pra pergunta {pergunta_id}")
+    pergunta = get_object_or_404(Pergunta, pk=pergunta_id)
+
+    return render(request, "enquetes/resultados.html", {"pergunta": pergunta})
 
 
 def votar(request, pergunta_id):
-    return HttpResponse(f"Você está votando na pergunta {pergunta_id}")
+    
+    pergunta = get_object_or_404(Pergunta, pk=pergunta_id)
+
+    try:
+        opcao_selecionada = pergunta.opcao_set.get(pk=request.POST["opcao"])
+
+    except (KeyError, Opcao.DoesNotExist):
+        return render(
+            request,
+            "enquetes/detalhes.html",
+            {
+                "pergunta": pergunta,
+                "mensagem_erro": "Você não escolheu uma opção válida!"
+            }
+        )
+
+    else:
+        opcao_selecionada.votos += 1
+        opcao_selecionada.save()
+
+        return HttpResponseRedirect(reverse("enquetes:resultados", args=(pergunta.id,)))
