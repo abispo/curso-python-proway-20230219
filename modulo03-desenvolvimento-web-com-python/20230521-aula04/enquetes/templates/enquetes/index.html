@@ -1,0 +1,13 @@
+{% if ultimas_cinco_perguntas %}
+    <ul>
+        {% for pergunta in ultimas_cinco_perguntas %}
+            <li><a href="{% url 'enquetes:detalhes' pergunta.id %}">{{ pergunta.texto }}</a></li>
+        {% endfor %}
+    </ul>
+{% else %}
+    <p>Não existem perguntas cadastradas</p>
+{% endif %}
+
+<hr />
+
+<a href="#">Estatísticas do sistema</a>

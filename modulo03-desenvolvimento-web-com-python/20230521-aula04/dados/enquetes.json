@@ -1,0 +1,135 @@
+{
+    "Você costuma praticar exercícios físicos com frequência?": [
+        {"texto": "Sim"},
+        {"texto": "Não"}
+    ],
+    "Qual é o seu prato favorito?": [
+        {"texto": "Arroz com feijão"},
+        {"texto": "Pizza"},
+        {"texto": "Churrasco"},
+        {"texto": "Sushi"},
+        {"texto": "Hambúrguer"}
+    ],
+    "Qual é o seu tipo de música preferido?": [
+        {"texto": "Rock"},
+        {"texto": "Pop"},
+        {"texto": "Hip-hop/Rap"},
+        {"texto": "Sertanejo"},
+        {"texto": "MPB"}
+    ],
+    "Qual é o seu gênero de filme favorito?": [
+        {"texto": "Ação"},
+        {"texto": "Comédia"},
+        {"texto": "Drama"},
+        {"texto": "Terror"},
+        {"texto": "Animação"}
+    ],
+    "Qual é o seu animal favorito?": [
+        {"texto": "Cachorro"},
+        {"texto": "Gato"},
+        {"texto": "Leão"},
+        {"texto": "Elefante"},
+        {"texto": "Panda"}
+    ],
+    "Qual é o seu esporte favorito?": [
+        {"texto": "Futebol"},
+        {"texto": "Basquete"},
+        {"texto": "Vôlei"},
+        {"texto": "Tênis"},
+        {"texto": "Natação"}
+    ],
+    "Qual é a sua cor favorita?": [
+        {"texto": "Azul"},
+        {"texto": "Verde"},
+        {"texto": "Amarelo"},
+        {"texto": "Vermelho"},
+        {"texto": "Preto"}
+    ],
+    "Qual é o seu destino de viagem dos sonhos?": [
+        {"texto": "Paris, França"},
+        {"texto": "Nova York, Estados Unidos"},
+        {"texto": "Tóquio, Japão"},
+        {"texto": "Sydney, Austrália"},
+        {"texto": "Rio de Janeiro, Brasil"}
+    ],
+    "Qual é o seu estilo de roupa favorito?": [
+        {"texto": "Casual"},
+        {"texto": "Esportivo"},
+        {"texto": "Formal"},
+        {"texto": "Rock"},
+        {"texto": "Boho"}
+    ],
+    "Qual é a sua bebida alcoólica preferida?": [
+        {"texto": "Cerveja"},
+        {"texto": "Vinho"},
+        {"texto": "Whisky"},
+        {"texto": "Tequila"},
+        {"texto": "Gin"}
+    ],
+    "Qual é a sua estação do ano favorita?": [
+        {"texto": "Verão"},
+        {"texto": "Inverno"},
+        {"texto": "Outono"},
+        {"texto": "Primavera"}
+    ],
+    "Qual é o seu tipo de livro preferido?": [
+        {"texto": "Romance"},
+        {"texto": "Aventura"},
+        {"texto": "Ficção científica"},
+        {"texto": "Mistério"},
+        {"texto": "Não gosto de ler"}
+    ],
+    "Qual é a sua rede social preferida?": [
+        {"texto": "Facebook"},
+        {"texto": "Instagram"},
+        {"texto": "Twitter"},
+        {"texto": "LinkedIn"},
+        {"texto": "Não uso redes sociais"}
+    ],
+    "Qual é a sua sobremesa favorita?": [
+        {"texto": "Bolo"},
+        {"texto": "Sorvete"},
+        {"texto": "Torta"},
+        {"texto": "Pudim"},
+        {"texto": "Brigadeiro"}
+    ],
+    "Você prefere praia ou montanha?": [
+        {"texto": "Praia"},
+        {"texto": "Montanha"}
+    ],
+    "Qual é o seu programa de TV favorito?": [
+        {"texto": "Game of Thrones"},
+        {"texto": "Friends"},
+        {"texto": "Breaking Bad"},
+        {"texto": "The Big Bang Theory"},
+        {"texto": "Não assisto TV"}
+    ],
+    "Qual é a sua marca de roupas favorita?": [
+        {"texto": "Nike"},
+        {"texto": "Adidas"},
+        {"texto": "Gucci"},
+        {"texto": "Zara"},
+        {"texto": "Não tenho uma marca favorita"}
+    ],
+    "Qual é o seu hobby preferido?": [
+        {"texto": "Cozinhar"},
+        {"texto": "Viajar"},
+        {"texto": "Assistir filmes"},
+        {"texto": "Praticar esportes"},
+        {"texto": "Ler"}
+    ],
+    "Qual é a sua estrela do cinema favorita?": [
+        {"texto": "Leonardo DiCaprio"},
+        {"texto": "Meryl Streep"},
+        {"texto": "Tom Hanks"},
+        {"texto": "Angelina Jolie"},
+        {"texto": "Não tenho uma estrela favorita"}
+    ],
+    "Qual é o seu jogo de videogame favorito?": [
+        {"texto": "Super Mario Bros."},
+        {"texto": "The Legend of Zelda"},
+        {"texto": "GTA"},
+        {"texto": "FIFA"},
+        {"texto": "Não jogo videogame"}
+    ]
+}
