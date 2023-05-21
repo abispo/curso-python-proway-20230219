@@ -59,3 +59,19 @@ def votar(request, pergunta_id):
         opcao_selecionada.save()
 
         return HttpResponseRedirect(reverse("enquetes:resultados", args=(pergunta.id,)))
+
+
+def estatisticas(request):
+
+    qtd_perguntas = Pergunta.objects.count()
+    qtd_opcoes = len(Opcao.objects.all())
+
+    # Criar uma variável que vai armazenar a lista com as 3 perguntas com mais respostas
+    # Dica: Use o método annotate (e chatgpt pra tirar duvidas)
+
+    contexto = {
+        "qtd_perguntas": qtd_perguntas,
+        "qtd_opcoes": qtd_opcoes
+    }
+
+    return render(request, "enquetes/estatisticas.html", contexto)
