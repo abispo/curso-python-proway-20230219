@@ -23,7 +23,7 @@
             "program": "${workspaceFolder}\\manage.py",
             "args": [
                 "baixar_enquete",
-                "enquetes.json"
+                "https://raw.githubusercontent.com/abispo/shared-files/main/enquetes.json"
             ],
             "django": true,
             "justMyCode": true
