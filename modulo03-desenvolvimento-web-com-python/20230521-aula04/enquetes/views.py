@@ -5,6 +5,7 @@ from django.shortcuts import render, get_object_or_404
 from django.urls import reverse
 
 from enquetes.models import Pergunta, Opcao
+from mensagens.models import Mensagem
 
 # enquetes/numero-da-sorte
 def numero_da_sorte(request):
@@ -75,3 +76,25 @@ def estatisticas(request):
     }
 
     return render(request, "enquetes/estatisticas.html", contexto)
+
+
+def nova_mensagem(request, pergunta_id):
+
+    if request.method == "GET":
+        pergunta = get_object_or_404(Pergunta, pk=pergunta_id)
+
+        return render(request, "enquetes/nova_mensagem.html", {"pergunta": pergunta})
+    
+    elif request.method == "POST":
+
+        email = request.POST.get("email")
+        texto = request.POST.get("texto")
+        pergunta = get_object_or_404(Pergunta, pk=pergunta_id)
+
+        nova_mensagem = Mensagem(
+            email=email, texto=texto, pergunta=pergunta
+        )
+
+        nova_mensagem.save()
+
+        return HttpResponseRedirect(reverse("enquetes:resultados", args=(pergunta.id,)))
