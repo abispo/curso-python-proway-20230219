@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <div class="row d-flex justify-content-center">
+        {% if form.errors %}
+            <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                {% for title, message in form.errors.items %}
+                    {{ message }}
+                {% endfor %}
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Fechar"></button>
+            </div>
+        {% endif %}
+        <div class="col-3">
+            <form class="login-form mt-5 pt-5" action="{% url 'login' %}" method="POST">
+                {% csrf_token %}
+                <div class="mb-3">
+                    <input type="text" name="username" id="username" class="form-control" placeholder="Digite seu usuário">
+                </div>
+                <div class="mb-3">
+                    <input type="password" name="password" id="password" class="form-control" placeholder="Digite sua senha">
+                </div>
+                <div class="d-flex justify-content-center">
+                    <button type="submit" class="btn btn-primary">Enviar</button>
+                </div>
+            </form>
+            <div>
+                <a href="{% url 'registro:registrar' %}">Não tenho cadastro</a>
+            </div>
+            <div>
+                <a href="{% url 'password_reset' %}">Recuperar senha</a>
+            </div>
+        </div>
+    </div>
+
+{% endblock content %}
