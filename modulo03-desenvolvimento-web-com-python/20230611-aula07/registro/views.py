@@ -1,3 +1,6 @@
+from datetime import datetime
+
+from django.conf import settings
 from django.contrib.auth.models import User
 from django.core.mail import send_mail
 from django.shortcuts import render, redirect
@@ -12,6 +15,24 @@ from registro.validators import (
 def registrar(request):
 
     if request.method == "GET":
+
+        pre_registro = PreRegistro.objects.filter(uuid=request.GET.get("id")).first()
+
+        if not pre_registro:
+            error_message = "Token de confirmação não encontrado!"
+
+        elif not pre_registro.valido:
+            error_message = "Token inválido. Por favor, refaça o processo."
+    
+        elif settings.PRE_REGISTRO_TIME_LIMIT > (datetime.now() - pre_registro.data_hora).days:
+            error_message = "O Token expirou. Por favor, refaça o processo."
+            pre_registro.valido = False
+            pre_registro.save()
+        
+        if error_message:
+            return render(request, "registro.html", {"error_message": error_message})
+
+
         return render(request, "registro.html")
 
     elif request.method == "POST":
@@ -77,11 +98,11 @@ def pre_registro(request):
             pre_registro = PreRegistro(email=email)
             pre_registro.save()
 
-            mensagem_email = """
+            mensagem_email = f"""
                 Você recebeu esse e-mail pois você ou alguém o cadastrou no sistema de agendamento. Caso queira confirmar o cadastro, clique no link a seguir.
                 Caso não tenha sido você, apenas ignore esse e-mail.
 
-                http://127.0.0.1:8000/registro/confirmacao
+                http://127.0.0.1:8000/registro/confirmacao?id={pre_registro.uuid}
             
             """
 
@@ -91,3 +112,6 @@ def pre_registro(request):
                 "admin@localhost",
                 [pre_registro.email]
             )
+
+
+            return render(request, "envio_pre_cadastro.html")
