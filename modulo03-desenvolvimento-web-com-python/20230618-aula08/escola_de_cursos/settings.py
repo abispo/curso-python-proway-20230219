@@ -46,6 +46,8 @@ INSTALLED_APPS = [
     'debug_toolbar',
 
     'registro.apps.RegistroConfig',
+    'cursos.apps.CursosConfig',
+    'turmas.apps.TurmasConfig',
 ]
 
 MIDDLEWARE = [
