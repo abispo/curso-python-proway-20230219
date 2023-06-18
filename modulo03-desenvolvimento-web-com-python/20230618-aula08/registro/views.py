@@ -1,9 +1,8 @@
-from datetime import datetime
-
 from django.conf import settings
 from django.contrib.auth.models import User
 from django.core.mail import send_mail
 from django.shortcuts import render, redirect
+from django.utils import timezone
 
 from registro.forms import PreRegistroForm
 from registro.models import PreRegistro
@@ -24,7 +23,7 @@ def registrar(request):
         elif not pre_registro.valido:
             error_message = "Token inválido. Por favor, refaça o processo."
     
-        elif settings.PRE_REGISTRO_TIME_LIMIT > (datetime.now() - pre_registro.data_hora).days:
+        elif settings.PRE_REGISTRO_TIME_LIMIT < (timezone.now() - pre_registro.data_hora).seconds:
             error_message = "O Token expirou. Por favor, refaça o processo."
             pre_registro.valido = False
             pre_registro.save()
@@ -99,7 +98,7 @@ def pre_registro(request):
             pre_registro.save()
 
             mensagem_email = f"""
-                Você recebeu esse e-mail pois você ou alguém o cadastrou no sistema de agendamento. Caso queira confirmar o cadastro, clique no link a seguir.
+                Você recebeu esse e-mail pois você ou alguém o cadastrou na escola de cursos. Caso queira confirmar o cadastro, clique no link a seguir.
                 Caso não tenha sido você, apenas ignore esse e-mail.
 
                 http://127.0.0.1:8000/registro/confirmacao?id={pre_registro.uuid}
@@ -107,7 +106,7 @@ def pre_registro(request):
             """
 
             send_mail(
-                "Bem-vindo ao sistema de agendamento",
+                "Bem-vindo à escola de cursos",
                 mensagem_email,
                 "admin@localhost",
                 [pre_registro.email]

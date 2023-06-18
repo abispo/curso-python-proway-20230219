@@ -1,5 +1,5 @@
 """
-WSGI config for agendamento project.
+WSGI config for escola_de_cursos project.
 
 It exposes the WSGI callable as a module-level variable named ``application``.
 
@@ -11,6 +11,6 @@ import os
 
 from django.core.wsgi import get_wsgi_application
 
-os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'agendamento.settings')
+os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'escola_de_cursos.settings')
 
 application = get_wsgi_application()
