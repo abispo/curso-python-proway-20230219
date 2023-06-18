@@ -1,11 +1,11 @@
 from django.conf import settings
 from django.contrib.auth.models import User
-from django.core.mail import send_mail
 from django.shortcuts import render, redirect
 from django.utils import timezone
 
 from registro.forms import PreRegistroForm
 from registro.models import PreRegistro
+from registro.utils import enviar_email
 
 from registro.validators import (
     dados_preenchidos, username_ou_email_ja_cadastrado, senha_valida
@@ -17,22 +17,23 @@ def registrar(request):
 
         pre_registro = PreRegistro.objects.filter(uuid=request.GET.get("id")).first()
 
+        error_message = None
+
         if not pre_registro:
             error_message = "Token de confirmação não encontrado!"
 
         elif not pre_registro.valido:
-            error_message = "Token inválido. Por favor, refaça o processo."
+            error_message = "Token inválido."
     
-        elif settings.PRE_REGISTRO_TIME_LIMIT < (timezone.now() - pre_registro.data_hora).seconds:
-            error_message = "O Token expirou. Por favor, refaça o processo."
-            pre_registro.valido = False
-            pre_registro.save()
+        elif settings.PRE_REGISTRO_TIME_LIMIT < (timezone.now() - pre_registro.data_hora).total_seconds():
+            error_message = "O Token expirou."
         
         if error_message:
-            return render(request, "registro.html", {"error_message": error_message})
+            return render(
+                request, "falha_confirmacao_pre_cadastro.html", {"error_message": error_message, "pre_registro": pre_registro}
+            )
 
-
-        return render(request, "registro.html")
+        return render(request, "registro.html", {"pre_registro": pre_registro})
 
     elif request.method == "POST":
         
@@ -42,6 +43,7 @@ def registrar(request):
             email = request.POST['email']
             senha = request.POST['password1']
             confirmacao_senha = request.POST['password2']
+            uuid_pre_registro = request.POST['uuid_pre_registro']
 
             error_message = None
 
@@ -60,6 +62,10 @@ def registrar(request):
             User.objects.create_user(
                 username=username, email=email, password=senha
             )
+
+            pre_registro = PreRegistro.objects.get(uuid=uuid_pre_registro)
+            pre_registro.valido = False
+            pre_registro.save()
 
             return redirect("login")
 
@@ -83,7 +89,7 @@ def pre_registro(request):
             email = form.cleaned_data.get("email")
             
             email_ja_cadastrado = User.objects.filter(email=email)
-            email_no_pre_cadastro = PreRegistro.objects.filter(email=email)
+            email_no_pre_cadastro = PreRegistro.objects.filter(email=email, valido=False)
 
             if email_ja_cadastrado or email_no_pre_cadastro:
 
@@ -97,20 +103,20 @@ def pre_registro(request):
             pre_registro = PreRegistro(email=email)
             pre_registro.save()
 
-            mensagem_email = f"""
-                Você recebeu esse e-mail pois você ou alguém o cadastrou na escola de cursos. Caso queira confirmar o cadastro, clique no link a seguir.
-                Caso não tenha sido você, apenas ignore esse e-mail.
-
-                http://127.0.0.1:8000/registro/confirmacao?id={pre_registro.uuid}
-            
-            """
-
-            send_mail(
-                "Bem-vindo à escola de cursos",
-                mensagem_email,
-                "admin@localhost",
-                [pre_registro.email]
-            )
-
+            enviar_email(pre_registro)
 
             return render(request, "envio_pre_cadastro.html")
+
+
+def reenviar_pre_registro(request, uuid):
+    if request.method == "GET":
+        pre_registro = PreRegistro.objects.get(uuid=uuid)
+        pre_registro.valido = False
+        pre_registro.save()
+
+        pre_registro = PreRegistro(email=pre_registro.email)
+        pre_registro.save()
+
+        enviar_email(pre_registro)
+
+        return render(request, "envio_pre_cadastro.html")

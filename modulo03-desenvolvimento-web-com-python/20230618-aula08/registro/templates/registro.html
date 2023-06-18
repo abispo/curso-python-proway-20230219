@@ -15,7 +15,7 @@
                     <input type="text" name="username" id="username" class="form-control" placeholder="Digite seu usuário" required>
                 </div>
                 <div class="mb-3">
-                    <input type="email" name="email" id="email" class="form-control" placeholder="Digite o seu e-mail" required>
+                    <input type="email" name="email" id="email" class="form-control" value={{ pre_registro.email }}>
                 </div>
                 <div class="mb-3">
                     <input type="password" name="password1" id="password1" class="form-control" placeholder="Digite sua senha" required>
@@ -23,6 +23,9 @@
                 <div class="mb-3">
                     <input type="password" name="password2" id="password2" class="form-control" placeholder="Confirme a sua senha" required>
                 </div>
+
+                <input type="hidden" name="uuid_pre_registro" value={{ pre_registro.uuid }}>
+                
                 <div class="d-flex justify-content-center">
                     <button type="submit" class="btn btn-primary">Cadastrar</button>
                 </div>
