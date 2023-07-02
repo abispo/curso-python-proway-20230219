@@ -48,6 +48,7 @@ INSTALLED_APPS = [
     'registro.apps.RegistroConfig',
     'cursos.apps.CursosConfig',
     'turmas.apps.TurmasConfig',
+    'alunos.apps.AlunosConfig',
 ]
 
 MIDDLEWARE = [
@@ -145,3 +146,5 @@ INTERNAL_IPS = [
 EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
 
 PRE_REGISTRO_TIME_LIMIT = 86400
+
+LOGIN_REDIRECT_URL = "/registro/processar-login"
