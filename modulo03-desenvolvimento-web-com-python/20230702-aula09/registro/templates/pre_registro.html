@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <div class="row d-flex justify-content-center mt-3">
+        {% if form.errors %}
+            <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                {% for title, message in form.errors.items %}
+                    {{ message }}
+                {% endfor %}
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Fechar"></button>
+            </div>
+        {% endif %}
+        <div class="col-3">
+            <form action="" method="POST">
+                {% csrf_token %}
+                <div class="form-floating mb-3">
+                    {{ form.email }}
+                    <label for="{{ form.email.id_for_label }}" class="form-label">E-mail</label>
+                </div>
+                <div>
+                    <input type="submit" value="Enviar" class="btn btn-primary w-100">
+                </div>
+            </form>
+        </div>
+    </div>
+{% endblock content %}
