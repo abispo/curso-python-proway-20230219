@@ -5,5 +5,5 @@ from . import views
 app_name = "alunos"
 
 urlpatterns = [
-    path("profile/", views.profile, name="profile"),
+    path("perfil/", views.perfil, name="perfil"),
 ]

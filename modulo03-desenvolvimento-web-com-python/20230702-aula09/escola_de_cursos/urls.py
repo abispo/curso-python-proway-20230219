@@ -23,6 +23,7 @@ urlpatterns = [
     path('__debug__/', include('debug_toolbar.urls')),
     path('auth/', include('django.contrib.auth.urls')),
     path('registro/', include('registro.urls')),
+    path('alunos/', include('alunos.urls')),
 ]
 
 urlpatterns += [path('', RedirectView.as_view(url="/auth/login", permanent=True)),]

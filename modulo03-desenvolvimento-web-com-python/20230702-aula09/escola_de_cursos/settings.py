@@ -148,3 +148,5 @@ EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
 PRE_REGISTRO_TIME_LIMIT = 86400
 
 LOGIN_REDIRECT_URL = "/registro/processar-login"
+
+LOGIN_URL = "/auth/login"
