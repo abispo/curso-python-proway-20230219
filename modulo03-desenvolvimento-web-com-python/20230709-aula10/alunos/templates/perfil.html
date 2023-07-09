@@ -3,19 +3,24 @@
 {% block content %}
 
     {% if lista_de_turmas_que_esta_matriculado %}
+
+        <h2 class="text-center">Lista de cursos que você está matriculado</h2>
     
         {% for turma in lista_de_turmas_que_esta_matriculado %}
             <div class="card mb-2" style="width: 30rem;">
                 <div class="card-body">
                 <h5 class="card-title">{{ turma.curso }}</h5>
                 <h6 class="card-subtitle mb-2 text-body-secondary">
-                    Curso ministrado por {{ turma.instrutor.first_name }} {{ turma.instrutor.last_name }}
+                    Curso ministrado por <strong>{{ turma.instrutor.first_name }} {{ turma.instrutor.last_name }}</strong>
                 </h6>
                 <p class="card-text">{{ turma.curso.descricao }}</p>
                 <a href="#" class="card-link">Mais informações</a>
                 </div>
             </div>
         {% endfor %}
+
+    {% else %}
+        <h3>Você ainda não se matriculou em nenhum curso. <a href="{% url 'cursos:todos_os_cursos' %}">Clique aqui</a> e garanta já a sua matrícula</h3>
 
     {% endif %}
 

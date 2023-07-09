@@ -13,6 +13,7 @@ class Turma(models.Model):
     qtd_minima_alunos = models.IntegerField(default=0)
     qtd_maxima_alunos = models.IntegerField(default=1000)
     alunos = models.ManyToManyField(User, related_name="aluno", db_table="tb_turmas_alunos")
+    aceitando_matriculas = models.BooleanField(default=True)
     
 
     def __str__(self):
